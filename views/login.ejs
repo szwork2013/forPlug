@@ -1,21 +1,43 @@
-<div class="login_bg" id="showloginbg"></div>
-<div class="login" id="showlogin">
-    <div class="login_text">
-        登录
+<%- include header %>
+<body style="background-color: #464646">
+<%- include top %>
+<div class="login" style="height: 400px;">
+    <div class="login_top">登录</div>
+    <div class="article">
+        <div class="article_container">
+            <% if (success) { %>
+            <div class="article_success">
+            <div class="article_text"><%= success %></div></div>
+            <% } %>
+            <% if (error) { %>
+            <div class="article_error">
+            <div class="article_text"><%= error %></div></div>
+            <% } %>
+        </div>
     </div>
-
-    <div class="login_exit">
-        <button type="button" class="close" onclick="showlogin('showlogin','showloginbg');">×</button>
+    <form class="login_container" method="post">
+        <div class="form-group">
+            <input type="name" class="form-control" placeholder="账号" name="name">
+        </div>
+        <div class="form-group">
+            <input type="password" class="form-control" placeholder="密码" name="password">
+        </div>
+        <div class="form-group">
+            <div class="form-inline">
+                <div class="form-group">
+                <input type="name" class="form-control" placeholder="验证码" name="yzm"style="width: 121px;">
+                </div>
+                <div class="form-group">
+                <div style="height: 34px; width: 145px; background:url(/yzm) no-repeat center;background-size: contain;"></div>
+                </div>
+            </div>
+        </div>
+        <button type="submit" class="btn btn-success btn-lg btn-block" value="登录">登录</button>
+    </form>
+    <div class="login_reg">
+        <a href="/reg">还没账号?注册一个吧!</a>
     </div>
-<form method="post">
-    <div class="form-group">
-        <input type="text" class="form-control" placeholder="用户名" name="name">
-    </div>
-    <div class="form-group">
-        <input type="password" class="form-control" placeholder="密码" name="password">
-    </div>
-    <button type="submit" class="btn btn-default" value="登录">登录</button>
-</form>
 </div>
+<%- include footer %>
 
 

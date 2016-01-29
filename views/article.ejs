@@ -1,4 +1,6 @@
 <%- include header %>
+<body style="background-color: #e8e8e8">
+<%- include top %>
 <p>
     <% if (user && (user.name == post.name)) { %>
     <span><a class="edit" href="/edit/<%= post.name %>/<%= post.time.day %>/<%= post.title %>">编辑</a></span>

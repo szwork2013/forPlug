@@ -1,0 +1,33 @@
+<%- include header %>
+<body style="background-color: #464646">
+<%- include top %>
+<div class="reg_mail" style="height: 300px;">
+    <div class="reg_mail_top">邮箱验证</div>
+    <div class="article">
+        <div class="article_container" style="width: 282px;">
+            <% if (success) { %>
+            <div class="article_success">
+                <div class="article_text"><%= success %></div>
+            </div>
+            <% } %>
+            <% if (error) { %>
+            <div class="article_error">
+                <div class="article_text"><%= error %> </div>
+            </div>
+            <% } %>
+        </div>
+    </div>
+    <form class="reg_mail_container" method="post">
+        <div class="form-group">
+            <input type="name" class="form-control" placeholder="邮箱" name="email">
+        </div>
+        <div class="form-group">
+            <input type="name" class="form-control" placeholder="验证码" name="randomCode">
+        </div>
+        <button type="submit" class="btn btn-success btn-lg btn-block" value="登录">验证</button>
+        <div class="login_reg" style="left: 0px;top: 5px;;">
+            <a href="/re_mail">收不到验证码?重新申请发送吧!</a>
+        </div>
+    </form>
+</div>
+<%- include footer %>

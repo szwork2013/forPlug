@@ -1,9 +1,11 @@
 var mongodb = require('./db');
 
-function Post(name, title, post) {
+function Post(name, title, tags, about, post) {
     this.name = name;
     this.title = title;
+    this.tags = tags;
     this.post = post;
+    this.about = about;
 }
 
 module.exports = Post;
@@ -19,14 +21,16 @@ Post.prototype.save = function(callback) {
         day : date.getFullYear() + "-" + (date.getMonth() + 1) + "-" + date.getDate(),
         minute : date.getFullYear() + "-" + (date.getMonth() + 1) + "-" + date.getDate() + " " +
         date.getHours() + ":" + (date.getMinutes() < 10 ? '0' + date.getMinutes() : date.getMinutes())
-    }
+    };
     //要存入数据库的文档
     var post = {
         name: this.name,
         time: time,
         title: this.title,
+        tags: this.tags,
         post: this.post,
-        comments: []
+        comments: [],
+        about: this.about
     };
     //打开数据库
     mongodb.open(function (err, db) {

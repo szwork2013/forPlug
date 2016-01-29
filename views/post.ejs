@@ -1,16 +1,63 @@
 <%- include header %>
+<body style="background-color: #e8e8e8">
+<%- include top %>
+<%- include notice %>
+<div class="top_css"></div>
 <form method="post">
-    标题：<br />
-    <input type="text" name="title" /><br />
-    正文：<br />
-    <input type="submit" value="发表" />
-    <textarea id="editor1" rows="10" cols="80" name="post">
-        This is my textarea to be replaced with CKEditor.
-    </textarea>
-    <script>
-        // Replace the <textarea id="editor1"> with a CKEditor
-        // instance, using default configuration.
-        CKEDITOR.replace( 'editor1' );
-    </script>
+    <div class="edit">
+        <div class="edit_container">
+            <div class="edit_txt">简介</div>
+                <div class="edit_options">
+                    <div class="form-horizontal">
+                        <div class="form-group">
+                            <label class="col-sm-1 control-label">标题</label>
+                            <div class="col-sm-7">
+                                <input type="name" class="form-control" name="title" value="<%= title1 %>">
+                                <span id="helpBlock" class="help-block">标题全靠脑洞</span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-1 control-label">简介</label>
+                            <div class="col-sm-7">
+                                <input type="name" class="form-control" name="about" value="<%= about %>">
+                                <span id="helpBlock" class="help-block">构思一句话描述你的神乎其技的插件</span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-1 control-label">标签</label>
+                            <div class="row">
+                                <div class="col-xs-2" style="width: 142px; ">
+                                    <input type="name" class="form-control" name="tag1" value="<%= tag1 %>">
+                                </div>
+                                <div class="col-xs-2" style="width: 142px;">
+                                    <input type="name" class="form-control" name="tag2" value="<%= tag2 %>">
+                                </div>
+                                <div class="col-xs-2" style="width: 142px;">
+                                    <input type="name" class="form-control" name="tag3" value="<%= tag3 %>">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            <div class="edit_txt">描述</div>
+            <div style="padding: 0 40px;">
+                <textarea id="editor3" rows="10" cols="80" name="post"><%= post %></textarea>
+            </div>
+            <div class="edit_send">
+                <button type="submit" class="btn btn-info" value="发表">发布插件</button>
+            </div>
+        </div>
+    </div>
 </form>
+
+
+<script>
+    CKEDITOR.replace( 'editor3', {
+        customConfig: './ckeditor_config.js'
+    });
+    CKEDITOR.editorConfig = function( config )
+    {
+        config.uiColor = '#FAFAFA';
+    };
+</script>
 <%- include footer %>

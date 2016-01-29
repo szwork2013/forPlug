@@ -9,86 +9,16 @@
   <!--插入CSS-->
   <link rel="stylesheet" href="/stylesheets/style.css">
   <link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <!--<link rel="stylesheet" href="/stylesheets/buttons.css">-->
   <!--插入JS-->
   <script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
   <script src="//cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
   <script src="//cdn.ckeditor.com/4.5.6/standard/ckeditor.js"></script>
+  <script src="/javascripts/Slideshow.js"></script>
   <!--插入图标-->
   <link rel="shortcut icon" href="/images/logo.png">
   <!--插入网页标题-->
   <title><%= title %></title>
-  <script language="JavaScript" type="text/JavaScript">
-    function showlogin(targetid,targetid1){
-
-      var target=document.getElementById(targetid);
-      var target1=document.getElementById(targetid1);
-
-      if (target.style.display=="block"){
-        target.style.display="none";
-
-      } else {
-        target.style.display="block";
-      }
-
-      if (target1.style.display=="block"){
-        target1.style.display="none";
-
-      } else {
-        target1.style.display="block";
-      }
-
-    }
-  </script>
 </head>
-<body>
-  <div class="top_color"></div>
-  <div class="top">
-    <%- include login %>
-    <div class="top_container">
-    <div class="top_logo"><a href="/"></a></div>
-    <div class="top_nav">
-      <li>
-        <a href="/">实验室</a>
-      </li>
-      <li>
-        <a href="/">创新基地</a>
-      </li>
-      <li>
-        <a href="/">闲聊茶庄</a>
-      </li>
-      <li>
-        <a href="/">人脉驿站</a>
-      </li>
-    </div>
-    <div class="top_bth"></div>
-    <div class="top_user">
-      <% if (user) { %>
-      <div class="top_user_post">
-        <div><a title="发表" href="/post">发表</a></div>
-      </div>
-      <div class="top_user_logout">
-        <div><a title="登出" href="/logout">登出</a></div>
-      </div>
-      <% } else { %>
-      <div class="top_user_login">
-        <a title="登录" href="#" onclick="showlogin('showlogin','showloginbg');">登录</a>
-      </div>
-      <div class="top_user_reg">
-        <a title="注册" href="/reg">注册</a>
-      </div>
-      <% } %>
-    </div>
-  </div>
-</div>
-  <% if (user) { %>
-  <%- include login %>
-  <% } %>
 
-<div class="article">
-  <div class="article_container">
-    <% if (success) { %>
-    <div><%= success %></div>
-    <% } %>
-    <% if (error) { %>
-    <div><%= error %> </div>
-<% } %>
+

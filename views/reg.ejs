@@ -1,9 +1,46 @@
 <%- include header %>
-<form method="post">
-    用户名：  <input type="text" name="name"/><br />
-    密码：    <input type="password" name="password"/><br />
-    确认密码：<input type="password" name="password-repeat"/><br />
-    邮箱：    <input type="email" name="email"/><br />
-    <input type="submit" value="注册"/>
-</form>
+<body style="background-color: #464646">
+<%- include top %>
+<div class="reg" style="height: 430px;">
+    <div class="reg_top">注册</div>
+    <div class="article">
+        <div class="article_container">
+            <% if (success) { %>
+            <div class="article_success">
+                <div class="article_text"><%= success %></div>
+            </div>
+            <% } %>
+            <% if (error) { %>
+            <div class="article_error">
+                <div class="article_text"><%= error %> </div>
+            </div>
+            <% } %>
+        </div>
+    </div>
+    <form class="reg_container" method="post">
+        <div class="form-group">
+            <input type="name" class="form-control" placeholder="账号" name="name">
+        </div>
+        <div class="form-group">
+            <input type="password" class="form-control" placeholder="密码" name="password">
+        </div>
+        <div class="form-group">
+            <input type="password" class="form-control" placeholder="确认密码" name="password-repeat">
+        </div>
+        <div class="form-group">
+            <input type="email" class="form-control" placeholder="邮箱" name="email">
+        </div>
+        <div class="form-group">
+            <div class="form-inline">
+                <div class="form-group">
+                    <input type="name" class="form-control" placeholder="验证码" name="yzm"style="width: 121px;">
+                </div>
+                <div class="form-group">
+                    <div style="height: 34px; width: 145px; background:url(/yzm) no-repeat center;background-size: contain;"></div>
+                </div>
+            </div>
+        </div>
+        <button type="submit" class="btn btn-success btn-lg btn-block" value="登录">注册</button>
+    </form>
+</div>
 <%- include footer %>

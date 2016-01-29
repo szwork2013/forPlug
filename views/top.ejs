@@ -1,0 +1,41 @@
+<div class="top_color"></div>
+<div class="top">
+    <div class="top_container">
+        <div class="top_logo"><a href="/"></a></div>
+        <div class="top_nav" id="nav">
+            <li>
+                <a href="/demo">实验室</a>
+            </li>
+            <li>
+                <a href="/demo">创新基地</a>
+            </li>
+            <li>
+                <a href="/demo">闲聊茶庄</a>
+            </li>
+            <li>
+                <a href="/demo">人脉驿站</a>
+            </li>
+        </div>
+        <div class="top_bth"></div>
+        <div class="top_user">
+            <% if (user) { %>
+            <div class="top_user_post">
+                <div><a title="发表" href="/post">发表</a></div>
+            </div>
+            <div class="top_user_logout">
+                <div><a title="登出" href="/logout">登出</a></div>
+            </div>
+            <% } else { %>
+            <div class="top_user_login">
+                <a title="登录" href="/login">登录</a>
+            </div>
+            <div class="top_user_reg">
+                <a title="注册" href="/reg">注册</a>
+            </div>
+            <% } %>
+        </div>
+    </div>
+</div>
+<script>
+    var navigation = responsiveNav("#nav");
+</script>

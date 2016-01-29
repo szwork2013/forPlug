@@ -1,0 +1,18 @@
+<div class="notice" id="notice_exit">
+    <div class="notice_container">
+        <% if (success) { %>
+        <div class="notice_success">
+            <div class="notice_text"><%= success %></div></div>
+        <% } %>
+        <% if (error) { %>
+        <div class="notice_error">
+            <div class="notice_text"><%= error %></div></div>
+        <% } %>
+    </div>
+    <script>
+        var t=setTimeout("notice_exit()",3000)
+        function notice_exit() {
+            document.getElementById("notice_exit").style.display="none";
+        }
+    </script>
+</div>
