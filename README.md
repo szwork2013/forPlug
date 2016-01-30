@@ -1,2 +1,2 @@
 # forPlug
-forPlug
+==已完成登录注册邮箱验证功能
