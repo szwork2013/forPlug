@@ -356,15 +356,27 @@ body{
 
 /*文章列表*/
 .mid{
-    height: auto;
-    width: 100%;
-    background-color: #FFFFFF;
-}
-.mid_container{
     position: relative;
     height: auto;
     width: 1200px;
-    margin: 30px auto;
+    display: table;
+    margin: 0 auto;
+    padding: 0;
+}
+.mid_left_container{
+    position: relative;
+    top: -10px;
+    width: 775px;
+    margin: 0;
+    padding: 0;
+    display: table-cell;
+}
+.mid_nav_left{
+    position: relative;
+    height: 150px;
+    width: 775px;
+    margin: 0;
+    display: block;
 }
 .mid_nav_left li{
     position: relative;
@@ -482,10 +494,15 @@ body{
     top: 10px;
 }
 /*右边*/
+.mid_right_container {
+    position: relative;
+    top: 25px;
+    height: 55px;
+    width: 400px;
+    display: inline-block;
+}
 .mid_nav_right_search{
-    position: absolute;
-    right: 0;
-    top: 0;
+    position: relative;
     height: 55px;
     width: 400px;
     background-color: #ffffff;

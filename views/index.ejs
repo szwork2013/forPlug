@@ -38,40 +38,46 @@
     document.getElementById("b5").style.height = winHeight + "px";
     document.getElementById("b6").style.height = winHeight + "px";
 </script>
-<div class="mid_container">
-    <div class="mid_nav_left">
-        <% posts.forEach(function (post, index) { %>
-        <li>
-            <div class="mid_nav_img">
-                <img src="images/slide1.jpg" alt="<%= post.name %>" class="img-rounded" height="130px" width="130px">
-            </div>
-            <div class="mid_nav_name">
-                <% post.tags.forEach(function (tag, index) { %>
-                <% if (tag) { %>
-                <div class="tag"><div class="btn-success btn-xs"><%= tag %></div></div>
-                <% } %>
-                <% }) %>
-                <a href="u/<%= post.name %>/<%= post.time.day %>/<%= post.title %>"class="mid_nav_name_text"><%= post.title %></a>
-            </div>
-            <div class="mid_nav_content"><p style="padding: 1px;"><%= post.about %></p></div>
-            <div class="mid_nav_author_img"><img src="images/auto_img.jpg" alt="Liuzln" class="img-circle" height="35px" width="35px"></div>
-            <div class="mid_nav_author_name"><a href="u/<%= post.name %>"><%= post.name %></a></div>
-            <div class="mid_nav_plugin_time_img"></div>
-            <div class="mid_nav_plugin_time_text"><%= post.time.minute %></div>
-            <button type="button" class="mid_nav_bth btn btn-info" onclick="window.open('u/<%= post.name %>/<%= post.time.day %>/<%= post.title %>')">查看插件</button>
-            <div class="mid_nav_plugin_number_img"></div>
-            <div class="mid_nav_plugin_number_text">10000</div>
-            <div class="btn-warning mid_nav_plugin_cost btn-xs">$100</div>
-        </li>
-        <% }) %>
+<div class="mid">
+    <div class="mid_left_container">
+        <div class="mid_nav_left">
+            <% posts.forEach(function (post, index) { %>
+            <li>
+                <div class="mid_nav_img">
+                    <img src="images/slide1.jpg" alt="<%= post.name %>" class="img-rounded" height="130px" width="130px">
+                </div>
+                <div class="mid_nav_name">
+                    <% post.tags.forEach(function (tag, index) { %>
+                    <% if (tag) { %>
+                    <div class="tag"><div class="btn-success btn-xs"><%= tag %></div></div>
+                    <% } %>
+                    <% }) %>
+                    <a href="u/<%= post.name %>/<%= post.time.day %>/<%= post.title %>"class="mid_nav_name_text"><%= post.title %></a>
+                </div>
+                <div class="mid_nav_content"><p style="padding: 1px;"><%= post.about %></p></div>
+                <div class="mid_nav_author_img"><img src="images/auto_img.jpg" alt="Liuzln" class="img-circle" height="35px" width="35px"></div>
+                <div class="mid_nav_author_name"><a href="u/<%= post.name %>"><%= post.name %></a></div>
+                <div class="mid_nav_plugin_time_img"></div>
+                <div class="mid_nav_plugin_time_text"><%= post.time.minute %></div>
+                <button type="button" class="mid_nav_bth btn btn-info" onclick="window.open('u/<%= post.name %>/<%= post.time.day %>/<%= post.title %>')">查看插件</button>
+                <div class="mid_nav_plugin_number_img"></div>
+                <div class="mid_nav_plugin_number_text">10000</div>
+                <div class="btn-warning mid_nav_plugin_cost btn-xs">$100</div>
+            </li>
+            <% }) %>
+        </div>
     </div>
-    <div class="mid_nav_right_search">
-        <div class="mid_nav_right_search_bth">
-            <button type="button" class="btn btn-primary">搜索</button>
+    <div style="display: table-cell;width: 100px;"></div>
+    <div class="mid_right_container">
+        <div class="mid_nav_right_search">
+            <div class="mid_nav_right_search_bth">
+                <button type="button" class="btn btn-primary">搜索</button>
+            </div>
+            <div class="mid_nav_right_search_input">
+                <input type="name" class="form-control" placeholder="搜索...">
+            </div>
         </div>
-        <div class="mid_nav_right_search_input">
-        <input type="name" class="form-control" placeholder="搜索...">
-        </div>
+
     </div>
 </div>
 
